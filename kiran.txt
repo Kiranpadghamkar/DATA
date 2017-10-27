@@ -1,0 +1,2 @@
+1.select count(*)from movie WHERE release BETWEEN 1945 AND 1959;
+2.select count(*)from movie WHERE rating>3.9;
