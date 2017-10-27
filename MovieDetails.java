@@ -1,4 +1,4 @@
-
+package demo;
 import java.io.*;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.io.DoubleWritable;
@@ -24,10 +24,10 @@ public class MovieDetails{
 	      {	    	  
 	         try{
 	            String[] str = value.toString().split(",");	 
-	            long year = Long.parseLong(str[2]);
+	            Double Rating = Double.parseDouble(str[3]);
 	            
 	            
-	            if(year>=1945 && year<=1959)
+	            if(Rating >3.9)
 	            {
 	            	String moviename=str[1];
 	            	 context.write(new Text("1"),new Text(moviename));
@@ -75,3 +75,4 @@ public class MovieDetails{
 		    System.exit(job.waitForCompletion(true) ? 0 : 1);
 		  }
 }
+
