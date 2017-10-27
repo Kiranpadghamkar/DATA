@@ -1,0 +1,10 @@
+1.m = FILTER movie by year >='1945' AND year <='1959';
+y=foreach m generate year,'1';
+a = group y all;
+t=foreach a generate group,COUNT(y)as headcount;
+dump t;
+2.r = FILTER movie by rating>3.9;
+y=foreach r generate rating,'1';
+a= group y all;
+t= foreach a generate group,COUNT(y) as headcount;
+dump t;
